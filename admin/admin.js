@@ -1,47 +1,24 @@
-const config = window.SITE_CONFIG || {};
+(function () {
+  const config = window.SITE_CONFIG || {};
 
-const syncTime = document.getElementById("syncTime");
-const sheetLink = document.getElementById("sheetLink");
-const driveLink = document.getElementById("driveLink");
-const formLink = document.getElementById("formLink");
-const logList = document.getElementById("logList");
+  const links = [
+    ["openSheet", config.responsesSheetUrl, "回答スプレッドシートのURLが未設定です。"],
+    ["openDrive", config.driveFolderUrl, "画像保存フォルダのURLが未設定です。"],
+    ["openForm", config.googleFormOpenUrl, "GoogleフォームのURLが未設定です。"]
+  ];
 
-function setClock() {
-  const now = new Date();
-  syncTime.textContent = now.toLocaleTimeString("ja-JP", { hour12: false });
-}
-setClock();
-setInterval(setClock, 1000);
-
-function setupLink(element, url, fallback) {
-  if (url && url.trim()) {
-    element.href = url.trim();
-    element.classList.remove("disabled");
-  } else {
-    element.href = fallback;
-    element.classList.add("disabled");
+  links.forEach(([id, url, message]) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+    if (url) {
+      element.href = url;
+      element.target = "_blank";
+      element.rel = "noopener noreferrer";
+      return;
+    }
     element.addEventListener("click", (event) => {
       event.preventDefault();
-      alert("site-config.js にURLを設定してください。");
+      alert(message + " site-config.js を確認してください。");
     });
-  }
-}
-
-setupLink(sheetLink, config.responsesSheetUrl, "#");
-setupLink(driveLink, config.driveFolderUrl, "#");
-setupLink(formLink, config.googleFormOpenUrl, "#");
-
-const logs = [
-  "[00:13:24] archive node awake",
-  "[00:15:02] image folder waiting for new files",
-  "[00:18:51] contact sheet linked",
-  "[00:21:09] memory classification updated",
-  "[00:24:39] 未確認の記録があります",
-  "[00:27:18] observer count: 1"
-];
-
-logs.forEach((log) => {
-  const li = document.createElement("li");
-  li.textContent = log;
-  logList.appendChild(li);
-});
+  });
+})();
