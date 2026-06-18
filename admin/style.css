@@ -15,10 +15,8 @@ body {
   min-height: 100vh;
   color: var(--text);
   background:
-    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
     radial-gradient(circle at top left, rgba(159,206,160,.08), transparent 34%),
     var(--bg);
-  background-size: 100% 4px, auto, auto;
   font-family: "Consolas", "Menlo", "Yu Gothic", monospace;
   line-height: 1.7;
 }
@@ -38,7 +36,6 @@ img { display: block; max-width: 100%; }
   padding: 24px;
   background: rgba(16,19,16,.94);
   border: 1px solid var(--line);
-  box-shadow: 0 0 0 1px rgba(159,206,160,.04) inset;
 }
 .label {
   margin: 0 0 8px;
@@ -145,38 +142,20 @@ h2 {
   gap: 14px;
 }
 .photo-card {
-  position: relative;
   margin: 0;
   padding: 10px 10px 12px;
   background: #0a0d0a;
   border: 1px solid var(--line);
-  overflow: hidden;
 }
 .photo-frame {
-  position: relative;
   border: 1px solid #263126;
   background: #050605;
   overflow: hidden;
-}
-.photo-frame::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -12%;
-  height: 2px;
-  z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(159,206,160,.9), transparent);
-  box-shadow: 0 0 12px rgba(159,206,160,.38);
-  animation: singleScanLine 3.8s linear infinite;
 }
 .photo-frame img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: #ddd;
-  filter: contrast(.96) brightness(.9) saturate(.82);
 }
 .photo-id {
   margin: 10px 0 2px;
@@ -188,13 +167,6 @@ h2 {
   margin-bottom: 0;
   color: var(--sub);
   font-size: 12px;
-}
-
-@keyframes singleScanLine {
-  0% { top: -12%; opacity: 0; }
-  8% { opacity: .85; }
-  92% { opacity: .85; }
-  100% { top: 112%; opacity: 0; }
 }
 
 @media (max-width: 900px) {
