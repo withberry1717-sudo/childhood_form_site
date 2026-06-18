@@ -3,41 +3,92 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>管理室 | 幼少期写真アーカイブ</title>
+  <title>監視室 | 幼少期写真アーカイブ</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <main class="admin-page">
-    <section class="panel">
-      <p class="label">管理室</p>
-      <h1>投稿内容の確認</h1>
-      <p class="lead">
-        Googleフォームで届いた回答と、アップロードされた写真を確認するためのページです。
-      </p>
+  <main class="watch-page">
+    <section class="watch-header" aria-label="監視室ヘッダー">
+      <div>
+        <p class="label">ARCHIVE MONITOR / ROOM 24</p>
+        <h1>監視室</h1>
+        <p class="lead">投稿内容、保存フォルダ、回答ログを確認するための管理者用ページです。</p>
+      </div>
+      <div class="status-box" aria-label="監視状態">
+        <span class="rec-dot"></span>
+        <strong>REC</strong>
+        <small id="currentTime">--:--:--</small>
+      </div>
+    </section>
 
-      <div class="links">
+    <section class="grid-layout">
+      <aside class="side-panel" aria-label="管理リンク">
+        <h2>管理リンク</h2>
         <a class="admin-link" id="openSheet" href="#">
           <span>回答スプレッドシート</span>
           <small>投稿者情報・お問い合わせ内容</small>
         </a>
         <a class="admin-link" id="openDrive" href="#">
           <span>画像保存フォルダ</span>
-          <small>アップロードされた写真</small>
+          <small>Googleフォームに送信された写真</small>
         </a>
         <a class="admin-link" id="openForm" href="#">
           <span>回答者用フォーム</span>
           <small>公開フォームを確認</small>
         </a>
-      </div>
 
-      <div class="memo">
-        <h2>メモ</h2>
-        <ul>
-          <li>この管理室は公開サイトからはリンクしていません。</li>
-          <li>回答と写真の管理はGoogleフォーム側で行います。</li>
-          <li>リンクが開かない場合は site-config.js を確認してください。</li>
-        </ul>
-      </div>
+        <div class="watch-card compact">
+          <h2>監視ログ</h2>
+          <ul class="log-list" id="watchLogs">
+            <li>画像カードを展開しました。</li>
+            <li>回答リンクを待機中。</li>
+            <li>外部フォーム接続を確認中。</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="main-panel" aria-label="写真監視エリア">
+        <div class="section-head">
+          <div>
+            <p class="label">SUBJECT FILES</p>
+            <h2>保存写真一覧</h2>
+          </div>
+          <p class="note">公開サイトには表示せず、管理室側でのみ確認します。</p>
+        </div>
+
+        <div class="photo-grid" aria-label="管理者用写真一覧">
+          <article class="photo-card">
+            <div class="photo-frame"><img src="../assets/images/image1.jpg" alt="管理用写真 1"></div>
+            <p class="photo-id">FILE 001</p>
+            <p class="photo-meta">status: stored / source: image1</p>
+          </article>
+          <article class="photo-card">
+            <div class="photo-frame"><img src="../assets/images/image2.jpg" alt="管理用写真 2"></div>
+            <p class="photo-id">FILE 002</p>
+            <p class="photo-meta">status: stored / source: image2</p>
+          </article>
+          <article class="photo-card">
+            <div class="photo-frame"><img src="../assets/images/image3.jpg" alt="管理用写真 3"></div>
+            <p class="photo-id">FILE 003</p>
+            <p class="photo-meta">status: stored / source: image3</p>
+          </article>
+          <article class="photo-card">
+            <div class="photo-frame"><img src="../assets/images/image4.jpg" alt="管理用写真 4"></div>
+            <p class="photo-id">FILE 004</p>
+            <p class="photo-meta">status: stored / source: image4</p>
+          </article>
+          <article class="photo-card">
+            <div class="photo-frame"><img src="../assets/images/image5.jpg" alt="管理用写真 5"></div>
+            <p class="photo-id">FILE 005</p>
+            <p class="photo-meta">status: stored / source: image5</p>
+          </article>
+          <article class="photo-card">
+            <div class="photo-frame"><img src="../assets/images/image6.jpg" alt="管理用写真 6"></div>
+            <p class="photo-id">FILE 006</p>
+            <p class="photo-meta">status: stored / source: image6</p>
+          </article>
+        </div>
+      </section>
     </section>
   </main>
 

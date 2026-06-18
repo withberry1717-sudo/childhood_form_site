@@ -1,11 +1,10 @@
 :root {
-  --bg: #f4efe6;
+  --bg: #f2eadf;
   --paper: #fffaf1;
-  --paper-dark: #e8ddcd;
-  --text: #2d2923;
-  --sub: #756b5f;
-  --line: #d4c7b5;
-  --accent: #6a4a32;
+  --text: #2c2823;
+  --sub: #70665b;
+  --line: #d4c6b5;
+  --accent: #604632;
 }
 
 * { box-sizing: border-box; }
@@ -18,19 +17,18 @@ body {
   line-height: 1.8;
 }
 a { color: inherit; }
-img { display: block; max-width: 100%; }
 
 .container {
-  width: min(100% - 32px, 960px);
+  width: min(100% - 32px, 900px);
   margin: 0 auto;
 }
 
 .site-header {
   border-bottom: 1px solid var(--line);
-  background: #f7f2ea;
+  background: #f7f0e7;
 }
 .header-inner {
-  height: 60px;
+  min-height: 58px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +49,7 @@ img { display: block; max-width: 100%; }
 .nav a:hover { text-decoration: underline; }
 
 .hero {
-  padding: 68px 0 54px;
+  padding: 68px 0 56px;
   border-bottom: 1px solid var(--line);
 }
 .hero-inner { max-width: 760px; }
@@ -59,19 +57,20 @@ img { display: block; max-width: 100%; }
   margin: 0 0 12px;
   color: var(--accent);
   font-size: 13px;
+  letter-spacing: .08em;
 }
 h1, h2, p { margin-top: 0; }
 h1 {
   margin-bottom: 18px;
   font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
-  font-size: clamp(38px, 7vw, 64px);
+  font-size: clamp(38px, 7vw, 62px);
   line-height: 1.2;
   font-weight: 500;
 }
 h2 {
   margin-bottom: 14px;
   font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
-  font-size: clamp(26px, 4vw, 36px);
+  font-size: clamp(26px, 4vw, 34px);
   font-weight: 500;
 }
 .lead {
@@ -111,40 +110,10 @@ h2 {
 .info-list dt { font-weight: 700; }
 .info-list dd { margin: 0; color: var(--sub); }
 
-.gallery-section {
-  background: var(--paper-dark);
+.post-section {
+  background: #eadfce;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
-.section-head {
-  margin-bottom: 22px;
-}
-.section-head p { margin-bottom: 0; color: var(--sub); }
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.gallery figure {
-  margin: 0;
-  padding: 10px 10px 14px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-}
-.gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: #ddd;
-  filter: sepia(.08) contrast(.98);
-}
-.gallery figcaption {
-  margin-top: 10px;
-  color: var(--sub);
-  font-size: 13px;
-  text-align: center;
-}
-
 .form-box {
   max-width: 820px;
   padding: 28px;
@@ -166,14 +135,17 @@ h2 {
 .footer p { margin: 0; }
 
 @media (max-width: 720px) {
-  .header-inner { align-items: flex-start; height: auto; padding: 16px 0; flex-direction: column; }
+  .header-inner {
+    align-items: flex-start;
+    height: auto;
+    padding: 16px 0;
+    flex-direction: column;
+  }
   .nav { gap: 14px; }
   .hero { padding: 52px 0 42px; }
-  .gallery { grid-template-columns: repeat(2, 1fr); }
   .info-list div { grid-template-columns: 1fr; gap: 4px; }
 }
 
 @media (max-width: 480px) {
-  .gallery { grid-template-columns: 1fr; }
   .form-box { padding: 22px; }
 }
