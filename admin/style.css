@@ -180,3 +180,93 @@ h2 {
   .status-box { text-align: left; }
   .photo-grid { grid-template-columns: 1fr; }
 }
+
+
+/* お問い合わせフォーム確認 */
+.contact-section {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-section h2 {
+  margin-bottom: 14px;
+  color: var(--text);
+}
+
+.contact-card {
+  background: #0a0d0a;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--red);
+  padding: 16px;
+  box-shadow: 0 0 26px rgba(217, 104, 104, .08);
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.status {
+  color: var(--red);
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.date {
+  color: var(--sub);
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.contact-table th,
+.contact-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #223024;
+  vertical-align: top;
+}
+
+.contact-table th {
+  width: 150px;
+  color: var(--green);
+  text-align: left;
+  font-weight: 700;
+}
+
+.contact-table td {
+  color: var(--text);
+}
+
+.contact-table tr:last-child th,
+.contact-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 520px) {
+  .contact-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-table th,
+  .contact-table td {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .contact-table th {
+    border-bottom: none;
+    padding-bottom: 2px;
+  }
+}
